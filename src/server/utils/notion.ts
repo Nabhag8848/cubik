@@ -4,29 +4,30 @@ import { NotionTable } from '../enums/notion';
 import * as dotenv from 'dotenv';
 dotenv.config();
 
-class Notion {
-  private token: string;
-  constructor() {
-    this.token = `${env.NOTION_TOKEN}` as string;
-  }
+const token = `${process.env.NOTION_TOKEN}` as string;
 
-  public async createTable() {
-    const table = await axios.post(
-      NotionConfig.API_URL + '/databases',
-      NotionTable,
-      {
-        headers: {
-          'Notion-Version': NotionConfig.NOTION_VERSION,
-          'Content-Type': 'application/json',
-          Authorization: `Bearer ${this.token}`,
-        },
-      }
-    );
+export async function createTable() {
+  const table = await axios.post(
+    NotionConfig.API_URL + '/databases',
+    NotionTable,
+    {
+      headers: {
+        'Notion-Version': NotionConfig.NOTION_VERSION,
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${token}`,
+      },
+    }
+  );
 
-    return table;
-  }
-
-  public async addField() {}
+  return table;
 }
 
-export const notion = new Notion();
+export async function addField(data: any) {
+  const response = await axios.post(NotionConfig.API_URL + '/pages', data, {
+    headers: {
+      'Notion-Version': NotionConfig.NOTION_VERSION,
+      'Content-Type': 'application/json',
+      Authorization: `Bearer ${token}`,
+    },
+  });
+}

@@ -54,59 +54,9 @@ export const NotionTable = {
     'Denied Rounds': {
       rich_text: {},
     },
-    //   'Dispute': {
-
-    //   }
-    //   'Dispute Status': {
-
-    //   }
-    //   'Appeal Link': {
-
-    //   }
     'Eligibilty Tag Reasoning': {
       rich_text: {},
     },
-    //   Topology: {
-    //     type: 'multi_select',
-    //     multi_select: {
-    //       options: [
-    //         {
-    //           name: 'Duc Loi Market',
-    //           color: 'blue',
-    //         },
-    //         {
-    //           name: 'Rainbow Grocery',
-    //           color: 'gray',
-    //         },
-    //         {
-    //           name: 'Nijiya Market',
-    //           color: 'purple',
-    //         },
-    //         {
-    //           name: "Gus'''s Community Market",
-    //           color: 'yellow',
-    //         },
-    //       ],
-    //     },
-    //   },
-    //   'Grant Eligibility FLAGS': {
-    //     select: {
-    //       options: [
-    //         {
-    //           name: 'NEEDS REVIEW',
-    //           color: 'gray',
-    //         },
-    //         {
-    //           name: 'APPROVED',
-    //           color: 'green',
-    //         },
-    //         {
-    //           name: 'DENIED',
-    //           color: 'red',
-    //         },
-    //       ],
-    //     },
-    //   },
     Comments: {
       rich_text: {},
     },
